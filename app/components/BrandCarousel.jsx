@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function BrandCarousel({
   brands = [],
-  speed = 1.2,
+  speed = 1.5,
   direction = "forward",
   title,
 }) {
@@ -39,15 +39,15 @@ export default function BrandCarousel({
   const slides = [...brands, ...brands, ...brands];
 
   return (
-    <section className="w-full py-15 bg-white overflow-hidden">
+    <section className="w-full py-15  bg-white  overflow-hidden">
       {title && (
-        <p className="text-center text-lg md:text-lg lg:text-xl font-bold text-gray-900 tracking-wide mb-7 px-5">
+        <p className="text-center text-lg md:text-lg lg:text-xl font-bold text-gray-900 tracking-wide mb-7 px-5 ">
           {title}
         </p>
       )}
 
-      <div className="overflow-hidden w-full" ref={emblaRef}>
-        <div className="flex items-center select-none">
+      <div className="overflow-hidden w-full " ref={emblaRef}>
+        <div className="flex items-center  select-none">
           {slides.map((brand, index) => (
             <div
               key={`${brand.name}-${index}`}

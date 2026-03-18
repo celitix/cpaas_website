@@ -614,7 +614,7 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
-              src="https://gs-upload.gupshup.io/revamp/assets/v3/images/new-home-page/new-logo-gupshup.svg"
+              src="/logo.jpg"
               alt="Gupshup"
               className="h-8"
               width={140}

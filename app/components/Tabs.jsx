@@ -230,13 +230,13 @@ export default function TabSection({ tabs = [] }) {
 
         {/* Right panel fixed height to prevent shaking */}
         <div className="flex-1 " style={{ minHeight: "550px" }}>
-          <div className="w-full h-full rounded-2xl overflow-hidden bg-gray-100 relative">
+          <div className="flex items-center w-full h-full rounded-2xl overflow-hidden bg-gray-100 relative">
             {tabs.map((tab, i) => (
               <img
                 key={i}
                 src={tab.image}
                 alt={tab.imageAlt ?? tab.heading}
-                className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 ease-in-out"
+                className="absolute inset-0 w-full h-full object-contain object-top transition-opacity duration-500 ease-in-out"
                 style={{ opacity: i === activeIndex ? 1 : 0 }}
               />
             ))}

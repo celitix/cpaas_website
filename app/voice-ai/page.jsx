@@ -133,7 +133,7 @@ const row2Items = [
   "View Product Catalogue",
   "Purchase Product",
   "Track Orders",
-]; 
+];
 
 const tabs = [
   {
@@ -167,25 +167,26 @@ const whyGupshup = [
     id: 1,
     img: "/voice-ai/card-3.webp",
     title: "PSTN Compatibility & Click-to- Call Support",
-    desc: "Seamlessly connect with customers via traditional phone systems, Voice AI, WhatsApp Business Calling, or direct click-to-call from your website/app, simplifying access to support or sales.", 
+    desc: "Seamlessly connect with customers via traditional phone systems, Voice AI, WhatsApp Business Calling, or direct click-to-call from your website/app, simplifying access to support or sales.",
   },
   {
     id: 2,
     img: "/voice-ai/card-4.webp",
     title: "Advanced Interruption Handling",
-    desc: "Our AI is designed to understand and smoothly manage interruptions, ensuring conversations flow naturally and effectively.", 
+    desc: "Our AI is designed to understand and smoothly manage interruptions, ensuring conversations flow naturally and effectively.",
   },
   {
     id: 3,
     img: "/voice-ai/card-5.webp",
     title: "Ultra-Low Latency",
-    desc: "Critical for natural conversations, our platform boasts minimal latency, ensuring real-time, fluid interactions that mimic human speech.", 
+    desc: "Critical for natural conversations, our platform boasts minimal latency, ensuring real-time, fluid interactions that mimic human speech.",
   },
 ];
 
 const faqData = [
   {
-    question: "What is Voice AI and how does it differ from traditional IVR systems?",
+    question:
+      "What is Voice AI and how does it differ from traditional IVR systems?",
     answer:
       "Voice AI, or Artificial Intelligence for voice interactions, is a sophisticated technology that enables natural, human-like conversations. Unlike traditional IVR (Interactive Voice Response) systems that rely on rigid menus and keyword recognition, Voice AI uses advanced Natural Language Processing (NLP) and Machine Learning (ML) to understand user intent, context, and even sentiment. This allows for truly intelligent and adaptive interactions, making customers feel like they're speaking to a real person.",
   },
@@ -200,7 +201,8 @@ const faqData = [
       "Our Voice AI is equipped with robust multi-lingual support, allowing it to understand and respond in various languages. Its advanced NLP capabilities are designed to handle different accents and dialects, ensuring a smooth and inclusive experience for a diverse customer base.",
   },
   {
-    question: "What makes your Voice AI interactions 'natural' and 'intelligent'?",
+    question:
+      "What makes your Voice AI interactions 'natural' and 'intelligent'?",
     answer:
       "Our Voice AI leverages Contextual Intelligence to understand the full scope of each conversation, remembering past interactions and applying relevant information for personalized responses. It also features Adaptive Communication, seamlessly adjusting its tone, pace, and vocabulary in real-time, much like a human, to ensure fluid and effective dialogues.",
   },
@@ -210,7 +212,8 @@ const faqData = [
       "Implementing our Voice AI significantly improves critical contact center metrics. You can expect to lower your First Response Time (FRT) by providing instant answers, and substantially reduce overall Resolution Time by automating common issues. This leads to higher customer satisfaction and operational efficiency.",
   },
   {
-    question: "Can your Voice AI handle a high volume of customer interactions?",
+    question:
+      "Can your Voice AI handle a high volume of customer interactions?",
     answer:
       "Yes, our Voice AI is designed for high scalability, capable of handling a massive volume of customer interactions simultaneously. This ensures consistent service quality even during peak demand, without the need to rapidly scale up human agent teams.",
   },
@@ -225,8 +228,8 @@ const faqData = [
       "How does your Voice AI handle interruptions during a conversation?",
     answer:
       "Our Voice AI features strong interruption handling. It is designed to intelligently detect when a user interrupts or changes their mind and can gracefully adjust the conversation flow, re-prompting or redirecting as needed, ensuring a seamless and natural dialogue.",
-  }, 
-]; 
+  },
+];
 
 const page = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -423,10 +426,9 @@ const page = () => {
       </section>
 
       {/* Youtube */}
-      <section className="py-12">
+      {/* <section className="py-12">
         <div className="py-20 px-10 bg-[#f6f4ff]">
           <div className=" max-w-7xl mx-auto flex flex-col gap-6">
-            {/* title */}
             <div className="flex justify-center">
               <h2 className="text-5xl font-semibold ">
                 Gupshup Voice AI:
@@ -437,7 +439,6 @@ const page = () => {
               </h2>
             </div>
 
-            {/* Video */}
             <div className="flex justify-center items-center p-4 relative ">
               <div className="w-full relative overflow-hidden">
                 <div className="w-full relative overflow-hidden">
@@ -457,7 +458,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Text Carousal */}
       <section className="w-full py-16 bg-white overflow-hidden">
@@ -496,7 +497,7 @@ const page = () => {
       </section>
 
       {/* Capabilities */}
-      <section section className="max-w-7xl mx-auto space-y-10 px-6">
+      <section className="max-w-7xl mx-auto space-y-10 px-6">
         <div className="flex flex-col ">
           <div className="flex justify-center">
             <div className="flex items-center justify-center gap-1 bg-[#ffebef] rounded-full px-2 py-1 ">
@@ -661,7 +662,7 @@ const page = () => {
               <div className="flex flex-col px-8 gap-2 h-full pt-3 pb-8">
                 <h2 className="font-semibold text-2xl">{card.title}</h2>
 
-                <p>{card.desc}</p> 
+                <p>{card.desc}</p>
               </div>
             </div>
           ))}

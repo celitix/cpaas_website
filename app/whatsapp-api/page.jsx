@@ -780,7 +780,7 @@ function Page() {
             {/* Image */}
             <div className="relative w-full h-64">
               <Image
-                src="/housing-image.webp"
+                src="/whatsapp-api/housing-image.webp"
                 alt="Housing.com couple"
                 fill
                 className="object-cover"
@@ -819,14 +819,33 @@ function Page() {
           </div>
 
           {/* Card 2 - Reserva / Center Quote Card */}
-          <div className="flex-1 rounded-2xl overflow-hidden flex flex-col relative bg-white min-h-[650px] border-2">
+          <div className="relative flex-1  flex flex-col rounded-2xl overflow-hidden bg-[#f8f8f8] border border-gray-300 ">
             {/* Full card background image */}
-            <Image
+            <div className="absolute top-2 left-2 ">
+              <Image
+                src="/voice-ai/top.svg"
+                alt="World Map"
+                width={90}
+                height={70}
+                className=""
+              />
+            </div>
+
+            <div className="absolute bottom-25 right-3">
+              <Image
+                src="/voice-ai/bottom.svg"
+                alt="World Map"
+                width={170}
+                height={130}
+                className=""
+              />
+            </div>
+            {/* <Image
               src="/whatsapp-api/testimonial-bg-new.svg"
               alt="Quote background"
               fill
               className="object-contain"
-            />
+            /> */}
 
             {/* Overlay content sitting on top of the image */}
             <div className="relative z-10 flex flex-col flex-1 px-5 pt-16 pb-6">
@@ -853,7 +872,7 @@ function Page() {
               <div className="mt-20 shadow-lg border border-gray-200 rounded-xl px-4 py-6 flex items-center gap-3 bg-white/80 backdrop-blur-sm">
                 <div className="relative w-36 h-8 flex-shrink-0">
                   <Image
-                    src="/reserva.webp"
+                    src="/whatsapp-api/reserva.webp"
                     alt="Reserva logo"
                     fill
                     className="object-contain"
