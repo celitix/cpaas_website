@@ -616,7 +616,7 @@ export default function Navbar() {
             <Image
               src="/logo.jpg"
               alt="Gupshup"
-              className="h-8"
+              className=""
               width={140}
               height={32}
               priority
@@ -874,18 +874,18 @@ export default function Navbar() {
         }`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 flex-shrink-0">
+        <div className="flex items-center justify-between px-2 py-4 border-b border-gray-200 flex-shrink-0">
           <Link
             href="/"
             className="flex items-center"
             onClick={() => setMobileOpen(false)}
           >
             <Image
-              src="https://gs-upload.gupshup.io/revamp/assets/v3/images/new-home-page/new-logo-gupshup.svg"
+             src="/logo.jpg"
               alt="Gupshup"
               width={120}
               height={28}
-              className="h-7 w-auto"
+              className=""
             />
           </Link>
           <button
