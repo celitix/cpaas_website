@@ -41,7 +41,6 @@ import {
 } from "react-icons/hi2";
 import { FaWhatsapp, FaInstagram, FaFacebookMessenger } from "react-icons/fa";
 import { MdOutlineContactPhone, MdOutlineCampaign } from "react-icons/md";
-import { TbBrandTelegram, TbMessageCircle2 } from "react-icons/tb";
 import { RiAdvertisementLine } from "react-icons/ri";
 
 
@@ -53,10 +52,11 @@ import { TiMessages } from "react-icons/ti";
 ───────────────────────────────────────── */
 
 /** Desktop mega-menu item: icon + title + optional desc */
-function MenuItem({ icon: Icon, title, desc, href = "#" }) {
+function MenuItem({ icon: Icon, title, desc, href = "#", onClose }) {
   return (
     <Link
       href={href}
+      onClick={onClose}
       className="group flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-150"
     >
       <div className="w-9 h-9 flex items-center justify-center bg-gray-100 group-hover:bg-violet-100 group-hover:text-violet-700 text-gray-500 rounded-lg flex-shrink-0 transition-colors duration-150">
@@ -99,11 +99,10 @@ function MegaTabs({ tabs, activeTab, onHover, onClick }) {
           key={tab}
           onMouseEnter={() => onHover(tab)}
           onClick={() => onClick(tab)}
-          className={`relative w-full text-left px-5 py-3 text-sm font-medium transition-colors duration-150 ${
-            activeTab === tab
+          className={`relative w-full text-left px-5 py-3 text-sm font-medium transition-colors duration-150 ${activeTab === tab
               ? "text-gray-900 font-semibold bg-white"
               : "text-gray-500 hover:text-gray-800 hover:bg-gray-100"
-          }`}
+            }`}
         >
           {activeTab === tab && (
             <span className="absolute left-0 top-2.5 bottom-2.5 w-[3px] bg-violet-600 rounded-r" />
@@ -118,7 +117,7 @@ function MegaTabs({ tabs, activeTab, onHover, onClick }) {
 /* ─────────────────────────────────────────
    PLATFORM MEGA MENU
 ───────────────────────────────────────── */
-function PlatformMenu() {
+function PlatformMenu({ onClose }) {
   const [activeTab, setActiveTab] = useState("Products");
 
   return (
@@ -242,13 +241,13 @@ function PlatformMenu() {
               href="/whatsapp-api"
               desc="World's most popular messaging channel for business communication"
             />
-              <MenuItem
+            <MenuItem
               icon={TiMessages}
               title="RCS"
               href="/rcs-api"
               desc="Rich Communication Services for enhanced interactive messaging"
             />
-              <MenuItem
+            <MenuItem
               icon={HiOutlineSpeakerWave}
               title="Voice"
               href="/voice-ai"
@@ -260,19 +259,19 @@ function PlatformMenu() {
               href="/sms-api"
               desc="Universal reach with instant delivery to any mobile device worldwide"
             />
-               <MenuItem
+            <MenuItem
               icon={FaInstagram}
               title="Instagram"
               href="/instagram-api"
               desc="Connect and engage customers through Instagram Direct Messages"
             />
-               <MenuItem
+            <MenuItem
               icon={TiMessages}
               title="Web Apps"
               href="/web-apps"
               desc="Embed intelligent chat widgets directly on your website"
             />
-                   
+
           </div>
         )}
       </div>
@@ -503,11 +502,10 @@ function MobTabbedSub({ tabs, renderPanel }) {
           <button
             key={t}
             onClick={() => setActiveTab(t)}
-            className={`flex-1 py-2.5 text-[13px] font-medium border-b-2 -mb-px transition-colors duration-150 ${
-              activeTab === t
+            className={`flex-1 py-2.5 text-[13px] font-medium border-b-2 -mb-px transition-colors duration-150 ${activeTab === t
                 ? "text-violet-700 border-violet-600"
                 : "text-gray-500 border-transparent"
-            }`}
+              }`}
           >
             {t}
           </button>
@@ -519,10 +517,11 @@ function MobTabbedSub({ tabs, renderPanel }) {
 }
 
 /** Mobile menu item with icon */
-function MobMenuItem({ icon: Icon, title, desc, href = "#" }) {
+function MobMenuItem({ icon: Icon, title, desc, href = "#", onClose }) {
   return (
     <Link
       href={href}
+      onClick={onClose}
       className="flex items-start gap-2.5 py-2.5 rounded-lg hover:bg-gray-50 transition-colors"
     >
       <div className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 flex-shrink-0">
@@ -636,18 +635,16 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenMenu(openMenu === "platform" ? null : "platform")
                 }
-                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${
-                  openMenu === "platform"
+                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${openMenu === "platform"
                     ? "text-violet-700"
                     : "text-gray-800 hover:text-violet-700"
-                }`}
+                  }`}
               >
                 Platform
                 <HiChevronDown
                   size={15}
-                  className={`transition-transform duration-200 ${
-                    openMenu === "platform" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${openMenu === "platform" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -658,9 +655,21 @@ export default function Navbar() {
                   onMouseEnter={cancelClose}
                   onMouseLeave={closeIt}
                 >
-                  <PlatformMenu />
+                  {/* <PlatformMenu /> */}
+                  <PlatformMenu onClose={() => setOpenMenu(null)} />
                 </div>
               )}
+            </li>
+
+
+            {/* ── Channels ── */}
+            <li>
+              <Link
+                href="/channels"
+                className="px-3 py-2 text-[14.5px] font-medium text-gray-800 hover:text-violet-700 rounded-md transition-colors duration-150"
+              >
+                Channels
+              </Link>
             </li>
 
             {/* ── AI Offerings ── */}
@@ -673,18 +682,16 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenMenu(openMenu === "ai" ? null : "ai")
                 }
-                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${
-                  openMenu === "ai"
+                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${openMenu === "ai"
                     ? "text-violet-700"
                     : "text-gray-800 hover:text-violet-700"
-                }`}
+                  }`}
               >
-                AI Offerings
+                AI Tools
                 <HiChevronDown
                   size={15}
-                  className={`transition-transform duration-200 ${
-                    openMenu === "ai" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${openMenu === "ai" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -710,18 +717,16 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenMenu(openMenu === "solutions" ? null : "solutions")
                 }
-                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${
-                  openMenu === "solutions"
+                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${openMenu === "solutions"
                     ? "text-violet-700"
                     : "text-gray-800 hover:text-violet-700"
-                }`}
+                  }`}
               >
                 Solutions
                 <HiChevronDown
                   size={15}
-                  className={`transition-transform duration-200 ${
-                    openMenu === "solutions" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${openMenu === "solutions" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -737,23 +742,23 @@ export default function Navbar() {
               )}
             </li>
 
-            {/* ── Customer Stories ── */}
+            {/* ── Developers ── */}
             <li>
               <Link
-                href="/resources/case-studies"
+                href="/developers"
                 className="px-3 py-2 text-[14.5px] font-medium text-gray-800 hover:text-violet-700 rounded-md transition-colors duration-150"
               >
-                Customer Stories
+                Developers
               </Link>
             </li>
 
-            {/* ── Partners ── */}
+            {/* ── why dove software ── */}
             <li>
               <Link
-                href="/partners"
+                href="/why-dove-soft"
                 className="px-3 py-2 text-[14.5px] font-medium text-gray-800 hover:text-violet-700 rounded-md transition-colors duration-150"
               >
-                Partners
+                Why Dove Soft
               </Link>
             </li>
 
@@ -767,18 +772,16 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenMenu(openMenu === "resources" ? null : "resources")
                 }
-                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${
-                  openMenu === "resources"
+                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${openMenu === "resources"
                     ? "text-violet-700"
                     : "text-gray-800 hover:text-violet-700"
-                }`}
+                  }`}
               >
                 Resources
                 <HiChevronDown
                   size={15}
-                  className={`transition-transform duration-200 ${
-                    openMenu === "resources" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${openMenu === "resources" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -795,7 +798,7 @@ export default function Navbar() {
             </li>
 
             {/* ── Company ── */}
-            <li
+            {/* <li
               className="relative"
               onMouseEnter={() => openIt("company")}
               onMouseLeave={closeIt}
@@ -804,18 +807,16 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenMenu(openMenu === "company" ? null : "company")
                 }
-                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${
-                  openMenu === "company"
+                className={`flex items-center gap-1 px-3 py-2 text-[14.5px] font-medium rounded-md transition-colors duration-150 cursor-pointer ${openMenu === "company"
                     ? "text-violet-700"
                     : "text-gray-800 hover:text-violet-700"
-                }`}
+                  }`}
               >
                 Company
                 <HiChevronDown
                   size={15}
-                  className={`transition-transform duration-200 ${
-                    openMenu === "company" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${openMenu === "company" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -829,18 +830,20 @@ export default function Navbar() {
                   <CompanyMenu />
                 </div>
               )}
-            </li>
+            </li> */}
           </ul>
 
           {/* ── Right: CTA + Hamburger ── */}
           <div className="flex items-center gap-3">
+
+
             <Link
               href="/request-demo"
-              className="hidden lg:flex items-center gap-2 bg-violet-700 hover:bg-violet-800 text-white rounded-full px-5 py-2.5 text-[14px] font-semibold transition-colors duration-200 flex-shrink-0"
+              className="hidden lg:flex items-center gap-2 bg-violet-700 hover:bg-[#ee3458] text-white rounded-full px-5 py-2.5 text-[14px] font-semibold transition-colors duration-200 flex-shrink-0 group"
             >
-              Request a demo
-              <span className="w-5 h-5 bg-white/25 rounded-full flex items-center justify-center">
-                <HiArrowRight size={11} />
+              Book Demo
+              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                <HiArrowRight className="text-violet-700 group-hover:text-[#ee3458] stroke-[1.5]" size={18} />
               </span>
             </Link>
 
@@ -869,9 +872,8 @@ export default function Navbar() {
           MOBILE DRAWER — slides from right, full screen width
       ═══════════════════════════════════════ */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-screen bg-white z-[1999] flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out lg:hidden ${
-          mobileOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 bottom-0 right-0 w-screen bg-white z-[1999] flex flex-col overflow-y-auto transition-transform duration-300 ease-in-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-2 py-4 border-b border-gray-200 flex-shrink-0">
@@ -881,7 +883,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
           >
             <Image
-             src="/logo.jpg"
+              src="/logo.jpg"
               alt="Gupshup"
               width={120}
               height={28}
@@ -925,12 +927,14 @@ export default function Navbar() {
                         href="/platform/communicate"
                         title="Communicate"
                         desc="The smart CPaaS platform for seamless, multi-channel messaging"
+                        onClose={() => setMobileOpen(false)}
                       />
                       <MobMenuItem
                         icon={RiAdvertisementLine}
                         href="/platform/advertise"
                         title="Advertise"
                         desc="Drive engagement with targeted, personalized ads on WhatsApp"
+                        onClose={() => setMobileOpen(false)}
                       />
                     </div>
                   );
@@ -979,12 +983,12 @@ export default function Navbar() {
                 if (tab === "Channels")
                   return (
                     <div>
-                      <MobMenuItem icon={FaWhatsapp} href="/whatsapp-api" title="WhatsApp" desc="World's most popular messaging channel" />
-                      <MobMenuItem icon={TiMessages} href="/rcs-api" title="RCS" desc="Rich Communication Services" />
-                      <MobMenuItem icon={HiOutlineSpeakerWave} title="Voice" desc="AI-powered voice bots" />
-                      <MobMenuItem icon={HiOutlineDevicePhoneMobile} href="/sms-api" title="SMS" desc="Universal reach to any mobile device" />
-                      <MobMenuItem icon={FaInstagram} href="/instagram-api" title="Instagram" desc="Instagram Direct Messages" />
-                      <MobMenuItem icon={TiMessages} title="Web Apps" desc="Intelligent website chat widgets" />
+                      <MobMenuItem icon={FaWhatsapp} href="/whatsapp-api" title="WhatsApp" desc="World's most popular messaging channel" onClose={() => setMobileOpen(false)} />
+                      <MobMenuItem icon={TiMessages} href="/rcs-api" title="RCS" desc="Rich Communication Services" onClose={() => setMobileOpen(false)} />
+                      <MobMenuItem icon={HiOutlineSpeakerWave} title="Voice" desc="AI-powered voice bots" onClose={() => setMobileOpen(false)} />
+                      <MobMenuItem icon={HiOutlineDevicePhoneMobile} href="/sms-api" title="SMS" desc="Universal reach to any mobile device" onClose={() => setMobileOpen(false)} />
+                      <MobMenuItem icon={FaInstagram} href="/instagram-api" title="Instagram" desc="Instagram Direct Messages" onClose={() => setMobileOpen(false)} />
+                      <MobMenuItem icon={TiMessages} title="Web Apps" desc="Intelligent website chat widgets" onClose={() => setMobileOpen(false)} />
                     </div>
                   );
               }}
@@ -992,11 +996,11 @@ export default function Navbar() {
           </MobAccordion>
 
           {/* AI Offerings */}
-          <MobAccordion label="AI Offerings">
+          <MobAccordion label="AI Tools">
             <div>
-              <MobMenuItem icon={HiOutlineChatBubbleLeftRight} href="/ai-agents" title="AI Agents" desc="Explore customizable AI agents to automate conversations, tasks, and decision-making" />
-              <MobMenuItem icon={HiOutlineUserGroup} href="/ai-agent-use-cases" title="AI Agent Use Cases" desc="Discover real-world AI agent applications for your industry" />
-              <MobMenuItem icon={HiOutlineSparkles} href="/ace-llm" title="ACE LLM" desc="Fine-tuned LLM for your industry and teams, powering AI conversations that drive results" />
+              <MobMenuItem icon={HiOutlineChatBubbleLeftRight} href="/ai-agents" title="AI Agents" desc="Explore customizable AI agents to automate conversations, tasks, and decision-making" onClose={() => setMobileOpen(false)} />
+              <MobMenuItem icon={HiOutlineUserGroup} href="/ai-agent-use-cases" title="AI Agent Use Cases" desc="Discover real-world AI agent applications for your industry" onClose={() => setMobileOpen(false)} />
+              <MobMenuItem icon={HiOutlineSparkles} href="/ace-llm" title="ACE LLM" desc="Fine-tuned LLM for your industry and teams, powering AI conversations that drive results" onClose={() => setMobileOpen(false)} />
             </div>
           </MobAccordion>
 
@@ -1064,9 +1068,9 @@ export default function Navbar() {
           <Link
             href="/request-demo"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2.5 bg-violet-700 hover:bg-violet-800 text-white rounded-xl py-3.5 text-[15px] font-semibold w-full transition-colors"
+            className="flex items-center justify-center gap-2.5 bg-violet-700 hover:bg-[#ee3458] text-white rounded-xl py-3.5 text-[15px] font-semibold w-full transition-colors"
           >
-            Request a demo
+            Book demo
             <HiArrowRight size={16} />
           </Link>
         </div>

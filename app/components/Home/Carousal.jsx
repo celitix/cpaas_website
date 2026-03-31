@@ -96,7 +96,7 @@ export default function HeroSection() {
 
       {/* Headline */}
       <div className="text-center max-w-5xl mx-auto mb-4">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
           <span
             className="inline text-[#5e34f1] px-3 py-0.5"
             style={{ background: "#dcdcff" }}
@@ -105,7 +105,7 @@ export default function HeroSection() {
           </span>
           <br />
           <span className="text-gray-900">with Gupshup AI Agents</span>
-        </h1>
+        </h2>
         <p className="mt-4 text-gray-700 text-sm md:text-lg leading-relaxed max-w-xl mx-auto">
           Turn everyday transactions into an AI-driven two-way conversation to drive higher customer engagement, across almost every function and industry imaginable.
         </p>

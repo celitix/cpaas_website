@@ -32,15 +32,15 @@ const Hero = () => {
         }}
       >
         <div className="relative z-10 flex flex-col items-center gap-8 sm:gap-12 px-4 sm:px-8  pt-18 pb-0">
-         
+
 
           {/* Text content */}
           <div className="flex flex-col items-center gap-4 sm:gap-5 text-center max-w-7xl mx-auto">
             <div className="relative  w-full ">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-pink-500">
-                Drive Business Growth
+                CPaaS That Thinks, Decides, and Acts
               </h1>
-              <div className="absolute right-1 lg:right-20 -top-10 lg:-top-5">
+              <div className="absolute right-1 lg:-right-15 -top-10 lg:-top-5">
                 <style>{`
               @keyframes slideUpFadeOut {
                 0%   { transform: translateY(0);    opacity: 1; }
@@ -80,13 +80,12 @@ const Hero = () => {
             </div>
 
             <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-snug max-w-4xl">
-              with Autonomous AI Agents for Every Customer Conversation
+              Built from scratch as CPaaS 2.0, with AI embedded at the core
             </p>
 
             <p className="text-sm sm:text-base lg:text-lg text-gray-900 font-normal max-w-2xl leading-relaxed">
-              Accelerate lead generation, drive sales, and delight customers
-              with personalized support using industry-trained AI Agents for
-              every customer conversation
+              Dove Soft runs intelligent customer conversations using AI, workflows, and omnichannel
+              automation
             </p>
 
             {/* CTA */}
@@ -95,7 +94,7 @@ const Hero = () => {
                 href="#"
                 className="group flex items-center gap-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-pink-500 hover:to-rose-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-violet-200 hover:shadow-pink-200 hover:scale-105"
               >
-                Start a conversation
+                Book a Live Demo
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-200">
                   <FiArrowRight size={14} className="text-white" />
                 </span>

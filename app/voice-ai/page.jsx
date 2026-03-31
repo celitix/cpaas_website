@@ -623,7 +623,7 @@ const page = () => {
       </section>
 
       {/* Why Gupshup */}
-      <section section className="max-w-7xl mx-auto space-y-10 px-6 py-15">
+      <section className="max-w-7xl mx-auto space-y-10 px-6 py-15">
         <div className="flex flex-col ">
           <div className="flex justify-start">
             <div className="flex items-center justify-center gap-2 bg-[#ffebef] rounded-full px-3 py-1 ">

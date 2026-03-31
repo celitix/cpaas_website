@@ -121,6 +121,7 @@ export default function CTASection({
             fontSize: "clamp(1.6rem, 4vw, 2.6rem)",
             fontWeight: 700,
             marginBottom: "16px",
+            marginTop: "20px",
             lineHeight: 1.2,
           }}
 

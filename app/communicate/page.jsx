@@ -352,7 +352,7 @@ const page = () => {
                 <div className="flex items-center border-l border-[#f4f4f4] ps-6 ">
                   <p className="text-xl font-light ">
                     <span className="font-semibold text-[#5e34f1] ">
-                      Higher campaign reach {" "}
+                      Higher campaign reach{" "}
                     </span>
                     by auto-rerouting failed messages to fallback channels
                   </p>
@@ -404,88 +404,223 @@ const page = () => {
         </div>
       </section>
 
-            {/* Capabilities */}
-      <section section className="max-w-7xl mx-auto space-y-10 px-6">
-        <div className="flex flex-col ">
+      {/* Why Gupshup Communicate */}
+      <section className="max-w-7xl mx-auto space-y-10 px-6 py-10">
+        <div className="flex flex-col gap-6 ">
           <div className="flex justify-center">
             <div className="flex items-center justify-center gap-1 bg-[#ffebef] rounded-full px-2 py-1 ">
               <FaCircleCheck className="text-[#ff3964]" />
               <span className="text-sm text-[#ff3964] font-medium ">
-                Capabilities
+                Why Gupshup Communicate
               </span>
             </div>
           </div>
-          <div className="flex flex-col items-center">
-            <div className="text-[#5e34f1] text-3xl lg:text-5xl font-semibold leading-relaxed ">
-              Supercharge Your Contact Center
-            </div>
-            <div className=" flex gap-1 text-3xl lg:text-5xl font-semibold leading-sung">
-              with Gupshup Voice AI
-            </div>
+          <div className="max-w-5xl mx-auto flex items-center">
+            <h2 className=" text-3xl lg:text-[42px] font-semibold leading-tight text-center ">
+              The CPaaS platform{" "}
+              <span className="text-[#5e34f1]">
+                built for high volumes, low latency and effective template
+                management
+              </span>
+            </h2>
           </div>
         </div>
 
         {/* cards */}
-        <div className=" max-w-xl lg:max-w-6xl mx-auto grid grid-cols-1 md:px-3 lg:grid-cols-2 gap-6">
+        <div className="">
+          <Image
+            src="/communicate/sec.webp"
+            alt="Why Gupshup Communicate"
+            width={1200}
+            height={600}
+            className="rounded-xl"
+          />
+        </div>
+      </section>
+
+      {/* Grid layout */}
+      <section className="max-w-7xl mx-auto space-y-10 px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* card 1 */}
-          <div className="flex flex-col gap-1 rounded-4xl bg-[#f8f8f8]">
-            <div className="py-2">
+          <div className="flex flex-col justify-center items-center gap-5 border-4 border-[#f6f4ff] px-20 py-10 rounded-4xl ">
+            <div className="">
               <Image
-                src="/rcs-api/grid-img-1.webp"
-                alt="grid-img-1"
-                width={600}
-                height={450}
+                src="/communicate/icon-9.svg"
+                alt="Why Gupshup Communicate"
+                width={100}
+                height={100}
               />
             </div>
-            <div className="flex flex-col gap-2 p-6 ">
-              <h2 className="font-semibold text-2xl">
-                Augment Your Contact Center Staff
-              </h2>
-              <p className="">
-                Empower your human agents by offloading routine inquiries and
-                repetitive tasks to our Voice AI, allowing them to focus on
-                complex, high-value interactions and strategic initiatives.
-              </p>
-              <div className="mt-2">
-                <button className="flex gap-2 px-4 py-2 rounded-full bg-[#5956d6] text-white hover:cusrsor-pointer">
-                  Try out our Voice AI Agent
-                  <div className="flex justify-center items-center bg-white p-1 rounded-full ">
-                    <FaArrowRight className="text-[#5956d6] text-base " />
-                  </div>
-                </button>
-              </div>
+            <div className="flex flex-col justify-center items-center gap-4 text-center">
+              <h3 className="text-2xl font-semibold">Built to Scale</h3>
+              <p>Scalable upto 10,000 TPS for peak season campaigns</p>
             </div>
           </div>
 
           {/* card 2 */}
-          <div className="flex flex-col gap-1 rounded-4xl bg-[#f8f8f8]">
-            <div className="py-2">
+          <div className="flex flex-col justify-center items-center gap-5 border-4 border-[#f6f4ff] px-20 py-10 rounded-4xl ">
+            <div className="">
               <Image
-                src="/rcs-api/grid-img-1.webp"
-                alt="grid-img-1"
-                width={600}
-                height={450}
+                src="/communicate/icon-8.svg"
+                alt="Why Gupshup Communicate"
+                width={100}
+                height={100}
               />
             </div>
-            <div className="flex flex-col gap-2 p-6 ">
-              <h2 className="font-semibold text-2xl">
-                Accelerated Resolution Times
-              </h2>
-              <p className="">
-                Drastically lower your First Response Time (FRT) and
-                significantly reduce overall resolution time. Get your customers
-                the answers and solutions they need, faster.
+            <div className="flex flex-col justify-center items-center gap-4 text-center">
+              <h3 className="text-2xl font-semibold">
+                Language Personalization
+              </h3>
+              <p>
+                AI language personalization to reach and converse with customers
+                in their preferred language
               </p>
-              <div className="mt-2">
-                <button className="flex gap-2 px-4 py-2 rounded-full bg-[#5956d6] text-white hover:cusrsor-pointer">
-                  Try out our Voice AI Agent
-                  <div className="flex justify-center items-center bg-white p-1 rounded-full ">
-                    <FaArrowRight className="text-[#5956d6] text-base " />
-                  </div>
-                </button>
-              </div>
+              <p>Capture and store language preferences for future campaigns</p>
             </div>
           </div>
+
+          {/* card 3 */}
+          <div className="flex flex-col justify-center items-center gap-5 border-4 border-[#f6f4ff] px-20 py-10 rounded-4xl ">
+            <div className="">
+              <Image
+                src="/communicate/timer.svg"
+                alt="Why Gupshup Communicate"
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="flex flex-col justify-center items-center gap-4 text-center">
+              <h3 className="text-2xl font-semibold">AI Optimizations</h3>
+              <p>
+                Find the best audience to send a campaign based on propensity
+                scores
+              </p>
+              <p>
+                AI send time optimization to find the best time slots to send a
+                campaign
+              </p>
+            </div>
+          </div>
+
+          {/* card 4 */}
+          <div className="flex flex-col justify-center items-center gap-5 border-4 border-[#f6f4ff] px-20 py-10 rounded-4xl ">
+            <div className="">
+              <Image
+                src="/communicate/icon-31.svg"
+                alt="Why Gupshup Communicate"
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="flex flex-col justify-center items-center gap-4 text-center">
+              <h3 className="text-2xl font-semibold">Template Optimizations</h3>
+              <p>
+                Automatically transforms messages with potential validation
+                issues to improve approval chances. Includes a confidence score
+                and learns from feedback to adapt and suggest better outputs
+                over time
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* exceptional reliability */}
+      <section className="max-w-7xl mx-auto space-y-10 px-6 py-10">
+        <div className="flex flex-col gap-6 ">
+          {/* <div className="flex justify-center">
+            <div className="flex items-center justify-center gap-1 bg-[#ffebef] rounded-full px-2 py-1 ">
+              <FaCircleCheck className="text-[#ff3964]" />
+              <span className="text-sm text-[#ff3964] font-medium ">
+                Why Gupshup Communicate
+              </span>
+            </div>
+          </div> */}
+          <div className="max-w-4xl mx-auto flex items-center">
+            <h2 className=" text-3xl lg:text-[42px] font-semibold leading-tight text-center ">
+              <span className="text-[#5e34f1]">
+                Trusted by leading enterprises{" "}
+              </span>
+              for exceptional reliability
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-col gap-3 p-6 border-4 border-[#f6f4ff] rounded-3xl">
+            {/* cards */}
+            <div className="h-16">
+              <Image
+                src="/communicate/logo-18.webp"
+                alt="Company Logo"
+                width={140}
+                height={60}
+                className="rounded-xl"
+              />
+            </div>
+
+            <div className="flex flex-col gap-3 border-b border-[#dfd7fd] pb-8 ">
+              <h3 className="text-[#5e34f1] text-3xl font-semibold"> 600%</h3>
+              <p className=" "> higher reach with coverage in 8 countries </p>
+            </div>
+            <div className="pt-5">
+              <Link href="/" className="text-[#5956d6] font-semibold">
+                Read full Story
+              </Link>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 p-6 border-4 border-[#f6f4ff] rounded-3xl">
+            {/* cards */}
+            <div className="h-16">
+              <Image
+                src="/communicate/logo-19.webp"
+                alt="Company Logo"
+                width={140}
+                height={60}
+                className="rounded-xl"
+              />
+            </div>
+
+            <div className="flex flex-col gap-3 ">
+              <h3 className="text-[#5e34f1] text-3xl font-semibold">
+                {" "}
+                250 M +{" "}
+              </h3>
+              <p className=" "> conversations on WhatsApp in a month </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 p-6 border-4 border-[#f6f4ff] rounded-3xl">
+            {/* cards */}
+            <div className="h-16">
+              <Image
+                src="/communicate/logo-20.webp"
+                alt="Company Logo"
+                width={140}
+                height={60}
+                className="rounded-xl"
+              />
+            </div>
+
+            <div className="flex flex-col gap-3 ">
+              <h3 className="text-[#5e34f1] text-3xl font-semibold"> 52 % </h3>
+              <p className=" ">
+                {" "}
+                open rate, 11.3 M users reached on a single day{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gaphics */}
+      <section
+        className="py-10"
+        style={{
+          background: `linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #F6F4FF 100%), #FFF`,
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className=""></div>
         </div>
       </section>
     </div>

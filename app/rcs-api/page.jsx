@@ -517,7 +517,7 @@ const page = () => {
       </section>
 
       {/* Capabilities */}
-      <section section className="max-w-7xl mx-auto space-y-10 px-6">
+      <section className="max-w-7xl mx-auto space-y-10 px-6">
         <div className="flex flex-col ">
           <div className="flex justify-center">
             <div className="flex items-center justify-center gap-1 bg-[#ffebef] rounded-full px-2 py-1 ">
@@ -599,7 +599,7 @@ const page = () => {
       </section>
 
       {/* Tab Section */}
-      <section section className="py-15 space-y-10">
+      <section className="py-15 space-y-10">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-semibold text-[#5e34f1] mb-2">
             Streamline the customer journey
@@ -617,7 +617,7 @@ const page = () => {
       </section>
 
       {/* Why Gupshup */}
-      <section section className="max-w-7xl mx-auto space-y-10 px-6 py-15">
+      <section className="max-w-7xl mx-auto space-y-10 px-6 py-15">
         <div className="flex flex-col ">
           <div className="flex justify-start">
             <div className="flex items-center justify-center gap-2 bg-[#ffebef] rounded-full px-3 py-1 ">
@@ -751,7 +751,7 @@ const page = () => {
       </section>
 
       {/* Tab Section */}
-      <section section className="py-15 space-y-10 ">
+      <section className="py-15 space-y-10 ">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-semibold text-[#5e34f1] mb-2">
            Seamless Customer Journeys Across

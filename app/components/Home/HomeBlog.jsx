@@ -199,13 +199,13 @@ export default function ResourcesSection() {
       </button>
     </div>
 
-     <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight max-w-6xl mx-auto">
+     <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight max-w-6xl mx-auto">
       Join the customer engagement conversation with the latest insights and{" "}
       <span className="inline-flex items-center gap-2">
         <CyclingSticker />
         success stories
       </span>
-    </h1>
+    </h2>
         </div>
 
         {/* Grid */}

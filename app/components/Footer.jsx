@@ -14,11 +14,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Careers", href: "/careers" },
-  { label: "Newsroom", href: "/newsroom" },
-  { label: "Alliances", href: "/alliances" },
-  { label: "Partners", href: "/partners" },
+  { label: "Product & Channel links", href: "/products" },
+  { label: "Why Dove Soft", href: "/why-dove-soft" },
+  { label: "Developers", href: "/developers" },
+  { label: "Resources", href: "/resources" },
+  { label: "Legal", href: "/legal" },
 ];
 
 const resourceLinks = [
@@ -192,7 +192,7 @@ export default function GupshupFooter() {
             </Link>
           </div>
           <span className="text-xs text-gray-500">
-            Gupshup © 2026. All rights reserved.
+            Dove Soft © 2026. All rights reserved.
           </span>
         </div>
       </div>

@@ -466,8 +466,9 @@ export default function HeroSection() {
   const current = testimonials[activeIndex];
 
   return (
-    <div
-      className=" "
+<div className="py-16 bg-[#fff]">
+     <div
+      className=""
       style={{
         background:
           // "linear-gradient(90deg, #5B21B6 35%, rgba(91,33,182,0.75) 58%, rgba(91,33,182,0.2) 100%)",
@@ -483,8 +484,8 @@ export default function HeroSection() {
               <Image
                 src="/home/top.webp"
                 alt="center curved top"
-                width={200}
-                height={200}
+                width={300}
+                height={300}
               />
 
               {/* Three bouncing dots over image */}
@@ -763,5 +764,6 @@ export default function HeroSection() {
         `}</style>
       </div>
     </div>
+</div>
   );
 }
