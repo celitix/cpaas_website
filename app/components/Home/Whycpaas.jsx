@@ -93,7 +93,7 @@ const impactItems = [
 
 export default function ComparisonSection() {
   return (
-    <section className="relative bg-[#f5f3ff] overflow-hidden py-20 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="relative bg-[#f5f3ff] overflow-hidden py-20 px-4 sm:px-6 lg:px-8 ">
       {/* Background glow blobs */}
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-200 opacity-40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-violet-200 opacity-40 rounded-full blur-3xl pointer-events-none" />

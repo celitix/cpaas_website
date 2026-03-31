@@ -81,7 +81,7 @@ const Automatic = () => {
         {/* 1. Orchestrate workflows */}
         <div className=" rounded-3xl overflow-hidden text-white p-8 bg-gradient-to-br from-purple-600 to-indigo-600 flex flex-col justify-between">
           <div className="relative flex-1 rounded-3xl overflow-hidden ">
-            <Image src="/home/watch-demo.webp" height={500} width={600} />
+            <Image src="/home/watch-demo.webp" alt="demo image" height={500} width={600} />
           </div>
         </div>
 
